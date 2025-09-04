@@ -9,7 +9,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Coloque aqui seu Access Token do Mercado Pago (use um .env no deploy)
-const ACCESS_TOKEN = "SEU_ACCESS_TOKEN";
+const ACCESS_TOKEN = "APP_USR-2fea6fcb-3ebc-4212-b84f-efa47b5388c9";
 
 app.post("/create_preference", async (req, res) => {
   try {
@@ -45,3 +45,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
+
