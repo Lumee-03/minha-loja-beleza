@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Minha Loja de Beleza — Produto</title>
+
+  <!-- Fonte Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="logo">Lume — Beleza</header>
+
+    <section class="product-card">
+      <img src="https://via.placeholder.com/420x280?text=Produto" alt="Produto" class="product-img" />
+      <div class="product-info">
+        <h1 class="product-title">Sérum Iluminador</h1>
+        <p class="product-desc">Frasco 30ml — hidratação e brilho.</p>
+
+        <div class="price-row">
+          <div>Preço unitário:</div>
+          <div id="unitPrice" class="price">R$ 59,90</div>
+        </div>
+
+        <label for="quantity">Quantidade</label>
+        <input id="quantity" type="number" min="1" value="1" />
+
+        <div class="total-row">
+          <div>Total a pagar</div>
+          <div id="totalPrice" class="total">R$ 59,90</div>
+        </div>
+
+        <button id="buyBtn" class="buy-btn">Comprar</button>
+        <p class="hint">No próximo passo vamos conectar ao Mercado Pago para gerar o link de pagamento.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
