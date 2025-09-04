@@ -1,18 +1,18 @@
-// preço unitário do produto (em número)
-const unitPrice = 59.90; // ajuste conforme seu produto
+// Preço unitário do produto
+const unitPrice = 59.90;
 
 const quantityInput = document.getElementById('quantity');
 const totalPriceEl = document.getElementById('totalPrice');
 const unitPriceEl = document.getElementById('unitPrice');
 const buyBtn = document.getElementById('buyBtn');
 
-// formata para BRL
-const fmtBRL = (n) => new Intl.NumberFormat('pt-BR', {style:'currency', currency:'BRL'}).format(n);
+// Função para formatar em BRL
+const fmtBRL = n => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(n);
 
-// exibe preço unitário
+// Mostra o preço unitário
 unitPriceEl.textContent = fmtBRL(unitPrice);
 
-// função que atualiza o total
+// Atualiza o total
 function updateTotal() {
   let q = parseInt(quantityInput.value, 10);
   if (!q || q < 1) { q = 1; quantityInput.value = 1; }
@@ -20,16 +20,15 @@ function updateTotal() {
   totalPriceEl.textContent = fmtBRL(total);
 }
 
-// atualiza ao mudar quantidade
+// Atualiza quando muda a quantidade
 quantityInput.addEventListener('input', updateTotal);
 
-// botão Comprar: por enquanto mostra um aviso.
-// No próximo passo vamos substituir por um fetch que chama seu backend
+// Inicializa
+updateTotal();
+
+// Botão comprar (apenas alerta por enquanto)
 buyBtn.addEventListener('click', () => {
   const q = parseInt(quantityInput.value, 10) || 1;
   const total = +(unitPrice * q).toFixed(2);
-  alert(`Pedido: ${q}× — Total: ${fmtBRL(total)}\nPróximo passo: gerar preferência no backend e redirecionar para o checkout Mercado Pago.`);
+  alert(`Pedido: ${q} × — Total: ${fmtBRL(total)}\nNo próximo passo vamos gerar o link de pagamento Mercado Pago.`);
 });
-
-// inicializa
-updateTotal();
