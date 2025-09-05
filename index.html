@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lume - Loja de Beleza</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Animação suave para submenus */
+    .submenu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .submenu.open {
+      max-height: 500px; /* suficiente para conter links */
+    }
+  </style>
 </head>
 <body class="font-sans bg-gray-50">
 
@@ -18,7 +29,9 @@
   <div class="bg-white shadow-md">
     <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
       <nav class="flex gap-6 text-gray-700 font-medium">
-        <button id="openMenu" class="hover:text-pink-600 flex items-center gap-1">≡ Ver tudo</button>
+        <button id="openMenu" class="hover:text-pink-600 flex items-center gap-1">
+          ☰ Ver tudo
+        </button>
         <a href="index.html" class="hover:text-pink-600">Home</a>
         <a href="cabelos.html" class="hover:text-pink-600">Cabelos</a>
         <a href="maquiagem.html" class="hover:text-pink-600">Maquiagem</a>
@@ -43,10 +56,10 @@
     <nav class="p-4 space-y-4 text-gray-700">
       <!-- Cabelos -->
       <div>
-        <button class="w-full flex justify-between items-center font-medium hover:text-pink-600 submenu-btn">
+        <button class="w-full flex justify-between items-center font-medium hover:text-pink-600 submenu-btn" aria-expanded="false">
           Cabelos <span>+</span>
         </button>
-        <div class="submenu hidden ml-4 mt-2 space-y-2 text-sm">
+        <div class="submenu ml-4 mt-2 space-y-2 text-sm">
           <a href="#" class="block hover:text-pink-600">Shampoo</a>
           <a href="#" class="block hover:text-pink-600">Condicionador</a>
           <a href="#" class="block hover:text-pink-600">Tratamentos</a>
@@ -56,10 +69,10 @@
 
       <!-- Maquiagem -->
       <div>
-        <button class="w-full flex justify-between items-center font-medium hover:text-pink-600 submenu-btn">
+        <button class="w-full flex justify-between items-center font-medium hover:text-pink-600 submenu-btn" aria-expanded="false">
           Maquiagem <span>+</span>
         </button>
-        <div class="submenu hidden ml-4 mt-2 space-y-2 text-sm">
+        <div class="submenu ml-4 mt-2 space-y-2 text-sm">
           <a href="#" class="block hover:text-pink-600">Base</a>
           <a href="#" class="block hover:text-pink-600">Batom</a>
           <a href="#" class="block hover:text-pink-600">Sombras</a>
@@ -69,10 +82,10 @@
 
       <!-- Perfumes -->
       <div>
-        <button class="w-full flex justify-between items-center font-medium hover:text-pink-600 submenu-btn">
+        <button class="w-full flex justify-between items-center font-medium hover:text-pink-600 submenu-btn" aria-expanded="false">
           Perfumes <span>+</span>
         </button>
-        <div class="submenu hidden ml-4 mt-2 space-y-2 text-sm">
+        <div class="submenu ml-4 mt-2 space-y-2 text-sm">
           <a href="#" class="block hover:text-pink-600">Femininos</a>
           <a href="#" class="block hover:text-pink-600">Masculinos</a>
           <a href="#" class="block hover:text-pink-600">Importados</a>
@@ -82,10 +95,10 @@
 
       <!-- Skincare -->
       <div>
-        <button class="w-full flex justify-between items-center font-medium hover:text-pink-600 submenu-btn">
+        <button class="w-full flex justify-between items-center font-medium hover:text-pink-600 submenu-btn" aria-expanded="false">
           Skincare <span>+</span>
         </button>
-        <div class="submenu hidden ml-4 mt-2 space-y-2 text-sm">
+        <div class="submenu ml-4 mt-2 space-y-2 text-sm">
           <a href="#" class="block hover:text-pink-600">Hidratantes</a>
           <a href="#" class="block hover:text-pink-600">Séruns</a>
           <a href="#" class="block hover:text-pink-600">Protetores Solares</a>
@@ -101,51 +114,51 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Exemplo de card -->
-      <div class="bg-white p-4 rounded-lg shadow">
+      <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
         <img src="https://via.placeholder.com/300x200?text=Shampoo" alt="Shampoo" class="rounded">
         <h3 class="mt-3 text-lg font-semibold">Shampoo Hidratante</h3>
         <p class="text-gray-600 mt-1">200ml — hidratação intensa</p>
         <div class="mt-2 flex justify-between items-center">
-          <span class="font-bold text-pink-600" id="unitPrice1">R$ 29,90</span>
+          <span class="font-bold text-pink-600" data-unitprice="29.90">R$ 29,90</span>
         </div>
         <div class="mt-2 flex items-center gap-2">
-          <label for="quantity1" class="text-sm">Qtd:</label>
-          <input id="quantity1" type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
+          <label class="text-sm">Qtd:</label>
+          <input type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
         </div>
-        <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price" id="totalPrice1">R$ 29,90</span></div>
-        <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700" data-unitprice="29.90">Comprar</button>
+        <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price">R$ 29,90</span></div>
+        <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">Comprar</button>
       </div>
 
-      <!-- Card fictício 2 -->
-      <div class="bg-white p-4 rounded-lg shadow">
+      <!-- Card 2 -->
+      <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
         <img src="https://via.placeholder.com/300x200?text=Condicionador" alt="Condicionador" class="rounded">
         <h3 class="mt-3 text-lg font-semibold">Condicionador Nutritivo</h3>
         <p class="text-gray-600 mt-1">200ml — maciez e brilho</p>
         <div class="mt-2 flex justify-between items-center">
-          <span class="font-bold text-pink-600" id="unitPrice2">R$ 34,90</span>
+          <span class="font-bold text-pink-600" data-unitprice="34.90">R$ 34,90</span>
         </div>
         <div class="mt-2 flex items-center gap-2">
-          <label for="quantity2" class="text-sm">Qtd:</label>
-          <input id="quantity2" type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
+          <label class="text-sm">Qtd:</label>
+          <input type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
         </div>
-        <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price" id="totalPrice2">R$ 34,90</span></div>
-        <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700" data-unitprice="34.90">Comprar</button>
+        <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price">R$ 34,90</span></div>
+        <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">Comprar</button>
       </div>
 
-      <!-- Card fictício 3 -->
-      <div class="bg-white p-4 rounded-lg shadow">
+      <!-- Card 3 -->
+      <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
         <img src="https://via.placeholder.com/300x200?text=Sérum" alt="Sérum" class="rounded">
         <h3 class="mt-3 text-lg font-semibold">Sérum Facial</h3>
         <p class="text-gray-600 mt-1">30ml — hidratação e brilho</p>
         <div class="mt-2 flex justify-between items-center">
-          <span class="font-bold text-pink-600" id="unitPrice3">R$ 59,90</span>
+          <span class="font-bold text-pink-600" data-unitprice="59.90">R$ 59,90</span>
         </div>
         <div class="mt-2 flex items-center gap-2">
-          <label for="quantity3" class="text-sm">Qtd:</label>
-          <input id="quantity3" type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
+          <label class="text-sm">Qtd:</label>
+          <input type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
         </div>
-        <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price" id="totalPrice3">R$ 59,90</span></div>
-        <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700" data-unitprice="59.90">Comprar</button>
+        <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price">R$ 59,90</span></div>
+        <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">Comprar</button>
       </div>
     </div>
   </main>
@@ -168,31 +181,30 @@
     submenuBtns.forEach(btn => {
       btn.addEventListener("click", () => {
         const submenu = btn.nextElementSibling;
-        submenu.classList.toggle("hidden");
-        btn.querySelector("span").textContent = submenu.classList.contains("hidden") ? "+" : "−";
+        submenu.classList.toggle("open");
+        btn.querySelector("span").textContent = submenu.classList.contains("open") ? "−" : "+";
+        btn.setAttribute('aria-expanded', submenu.classList.contains("open"));
       });
     });
 
-    // Atualizar total em tempo real e botão comprar
-    const quantityInputs = document.querySelectorAll(".quantity-input");
-    const buyButtons = document.querySelectorAll(".buy-btn");
+    // Total dinâmico e botão comprar
+    document.querySelectorAll('.buy-btn').forEach(btn => {
+      const card = btn.closest('div');
+      const input = card.querySelector('.quantity-input');
+      const totalEl = card.querySelector('.total-price');
+      const unitPrice = parseFloat(card.querySelector('[data-unitprice]').dataset.unitprice);
 
-    quantityInputs.forEach((input, index) => {
-      const totalEl = document.getElementById(`totalPrice${index+1}`);
-      const unitPrice = parseFloat(input.parentElement.parentElement.querySelector(".buy-btn").dataset.unitprice);
-      input.addEventListener("input", () => {
-        let q = parseInt(input.value, 10);
-        if (!q || q < 1) { q = 1; input.value = 1; }
-        totalEl.textContent = `R$ ${(unitPrice * q).toFixed(2)}`;
+      // Atualizar total em tempo real
+      input.addEventListener('input', () => {
+        let qty = Math.max(1, parseInt(input.value) || 1);
+        input.value = qty;
+        totalEl.textContent = `R$ ${(qty * unitPrice).toFixed(2)}`;
       });
-    });
 
-    buyButtons.forEach((btn, index) => {
-      btn.addEventListener("click", () => {
-        const input = quantityInputs[index];
-        const q = parseInt(input.value, 10) || 1;
-        const total = (parseFloat(btn.dataset.unitprice) * q).toFixed(2);
-        alert(`Produto: ${btn.parentElement.querySelector("h3").textContent}\nQtd: ${q}\nTotal: R$ ${total}`);
+      // Comprar
+      btn.addEventListener('click', () => {
+        let qty = Math.max(1, parseInt(input.value) || 1);
+        alert(`Produto: ${card.querySelector('h3').textContent}\nQtd: ${qty}\nTotal: R$ ${(qty * unitPrice).toFixed(2)}`);
       });
     });
   </script>
