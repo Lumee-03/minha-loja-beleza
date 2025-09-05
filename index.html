@@ -18,7 +18,7 @@
   <div class="bg-white shadow-md">
     <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
       <nav class="flex gap-6 text-gray-700 font-medium">
-        <button id="openMenu" class="hover:text-pink-600">Ver tudo</button>
+        <button id="openMenu" class="hover:text-pink-600 flex items-center gap-1">≡ Ver tudo</button>
         <a href="index.html" class="hover:text-pink-600">Home</a>
         <a href="cabelos.html" class="hover:text-pink-600">Cabelos</a>
         <a href="maquiagem.html" class="hover:text-pink-600">Maquiagem</a>
@@ -95,10 +95,59 @@
     </nav>
   </div>
 
-  <!-- Conteúdo da página -->
+  <!-- Conteúdo da página com cards de produtos -->
   <main class="max-w-7xl mx-auto px-4 py-10">
-    <h2 class="text-3xl font-bold text-gray-800 mb-6">Bem-vinda à Lume</h2>
-    <p class="text-gray-600">Aqui você encontra os melhores produtos de beleza para cabelos, maquiagem, perfumes e skincare.</p>
+    <h2 class="text-3xl font-bold text-gray-800 mb-6">Produtos em destaque</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Exemplo de card -->
+      <div class="bg-white p-4 rounded-lg shadow">
+        <img src="https://via.placeholder.com/300x200?text=Shampoo" alt="Shampoo" class="rounded">
+        <h3 class="mt-3 text-lg font-semibold">Shampoo Hidratante</h3>
+        <p class="text-gray-600 mt-1">200ml — hidratação intensa</p>
+        <div class="mt-2 flex justify-between items-center">
+          <span class="font-bold text-pink-600" id="unitPrice1">R$ 29,90</span>
+        </div>
+        <div class="mt-2 flex items-center gap-2">
+          <label for="quantity1" class="text-sm">Qtd:</label>
+          <input id="quantity1" type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
+        </div>
+        <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price" id="totalPrice1">R$ 29,90</span></div>
+        <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700" data-unitprice="29.90">Comprar</button>
+      </div>
+
+      <!-- Card fictício 2 -->
+      <div class="bg-white p-4 rounded-lg shadow">
+        <img src="https://via.placeholder.com/300x200?text=Condicionador" alt="Condicionador" class="rounded">
+        <h3 class="mt-3 text-lg font-semibold">Condicionador Nutritivo</h3>
+        <p class="text-gray-600 mt-1">200ml — maciez e brilho</p>
+        <div class="mt-2 flex justify-between items-center">
+          <span class="font-bold text-pink-600" id="unitPrice2">R$ 34,90</span>
+        </div>
+        <div class="mt-2 flex items-center gap-2">
+          <label for="quantity2" class="text-sm">Qtd:</label>
+          <input id="quantity2" type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
+        </div>
+        <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price" id="totalPrice2">R$ 34,90</span></div>
+        <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700" data-unitprice="34.90">Comprar</button>
+      </div>
+
+      <!-- Card fictício 3 -->
+      <div class="bg-white p-4 rounded-lg shadow">
+        <img src="https://via.placeholder.com/300x200?text=Sérum" alt="Sérum" class="rounded">
+        <h3 class="mt-3 text-lg font-semibold">Sérum Facial</h3>
+        <p class="text-gray-600 mt-1">30ml — hidratação e brilho</p>
+        <div class="mt-2 flex justify-between items-center">
+          <span class="font-bold text-pink-600" id="unitPrice3">R$ 59,90</span>
+        </div>
+        <div class="mt-2 flex items-center gap-2">
+          <label for="quantity3" class="text-sm">Qtd:</label>
+          <input id="quantity3" type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
+        </div>
+        <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price" id="totalPrice3">R$ 59,90</span></div>
+        <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700" data-unitprice="59.90">Comprar</button>
+      </div>
+    </div>
   </main>
 
   <script>
@@ -109,29 +158,44 @@
     const submenuBtns = document.querySelectorAll(".submenu-btn");
 
     // Abrir menu
-    openMenu.addEventListener("click", () => {
-      sideMenu.classList.remove("-translate-x-full");
-    });
-    openMenuMobile.addEventListener("click", () => {
-      sideMenu.classList.remove("-translate-x-full");
-    });
+    openMenu.addEventListener("click", () => sideMenu.classList.remove("-translate-x-full"));
+    openMenuMobile.addEventListener("click", () => sideMenu.classList.remove("-translate-x-full"));
 
     // Fechar menu
-    closeMenu.addEventListener("click", () => {
-      sideMenu.classList.add("-translate-x-full");
-    });
+    closeMenu.addEventListener("click", () => sideMenu.classList.add("-translate-x-full"));
 
     // Submenus expansíveis
     submenuBtns.forEach(btn => {
       btn.addEventListener("click", () => {
         const submenu = btn.nextElementSibling;
         submenu.classList.toggle("hidden");
-        btn.querySelector("span").textContent =
-          submenu.classList.contains("hidden") ? "+" : "−";
+        btn.querySelector("span").textContent = submenu.classList.contains("hidden") ? "+" : "−";
+      });
+    });
+
+    // Atualizar total em tempo real e botão comprar
+    const quantityInputs = document.querySelectorAll(".quantity-input");
+    const buyButtons = document.querySelectorAll(".buy-btn");
+
+    quantityInputs.forEach((input, index) => {
+      const totalEl = document.getElementById(`totalPrice${index+1}`);
+      const unitPrice = parseFloat(input.parentElement.parentElement.querySelector(".buy-btn").dataset.unitprice);
+      input.addEventListener("input", () => {
+        let q = parseInt(input.value, 10);
+        if (!q || q < 1) { q = 1; input.value = 1; }
+        totalEl.textContent = `R$ ${(unitPrice * q).toFixed(2)}`;
+      });
+    });
+
+    buyButtons.forEach((btn, index) => {
+      btn.addEventListener("click", () => {
+        const input = quantityInputs[index];
+        const q = parseInt(input.value, 10) || 1;
+        const total = (parseFloat(btn.dataset.unitprice) * q).toFixed(2);
+        alert(`Produto: ${btn.parentElement.querySelector("h3").textContent}\nQtd: ${q}\nTotal: R$ ${total}`);
       });
     });
   </script>
+
 </body>
 </html>
-
-
