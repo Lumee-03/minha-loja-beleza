@@ -109,13 +109,23 @@
   </div>
 
   <!-- Conteúdo da página com cards de produtos -->
-  <main class="max-w-7xl mx-auto px-4 py-10">
-    <h2 class="text-3xl font-bold text-gray-800 mb-6">Produtos em destaque</h2>
+  <main class="max-w-7xl mx-auto px-4 py-10 space-y-16">
 
+  <!-- Cabelos -->
+  <section>
+    <h2 class="text-3xl font-bold text-gray-800 mb-6">Cabelos</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Exemplo de card -->
+
+      <!-- Card Shampoo -->
       <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
-        <img src="https://via.placeholder.com/300x200?text=Shampoo" alt="Shampoo" class="rounded">
+        <div class="relative w-full h-48 overflow-hidden rounded">
+          <img src="https://via.placeholder.com/300x200?text=Shampoo1" class="w-full h-full object-cover carousel-image">
+          <img src="https://via.placeholder.com/300x200?text=Shampoo2" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Shampoo3" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Shampoo4" class="w-full h-full object-cover carousel-image hidden">
+          <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 prev-btn">&lt;</button>
+          <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 next-btn">&gt;</button>
+        </div>
         <h3 class="mt-3 text-lg font-semibold">Shampoo Hidratante</h3>
         <p class="text-gray-600 mt-1">200ml — hidratação intensa</p>
         <div class="mt-2 flex justify-between items-center">
@@ -129,9 +139,16 @@
         <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">Comprar</button>
       </div>
 
-      <!-- Card 2 -->
+      <!-- Card Condicionador -->
       <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
-        <img src="https://via.placeholder.com/300x200?text=Condicionador" alt="Condicionador" class="rounded">
+        <div class="relative w-full h-48 overflow-hidden rounded">
+          <img src="https://via.placeholder.com/300x200?text=Condicionador1" class="w-full h-full object-cover carousel-image">
+          <img src="https://via.placeholder.com/300x200?text=Condicionador2" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Condicionador3" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Condicionador4" class="w-full h-full object-cover carousel-image hidden">
+          <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 prev-btn">&lt;</button>
+          <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 next-btn">&gt;</button>
+        </div>
         <h3 class="mt-3 text-lg font-semibold">Condicionador Nutritivo</h3>
         <p class="text-gray-600 mt-1">200ml — maciez e brilho</p>
         <div class="mt-2 flex justify-between items-center">
@@ -145,11 +162,100 @@
         <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">Comprar</button>
       </div>
 
-      <!-- Card 3 -->
+      <!-- Card Máscara -->
       <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
-        <img src="https://via.placeholder.com/300x200?text=Sérum" alt="Sérum" class="rounded">
-        <h3 class="mt-3 text-lg font-semibold">Sérum Facial</h3>
-        <p class="text-gray-600 mt-1">30ml — hidratação e brilho</p>
+        <div class="relative w-full h-48 overflow-hidden rounded">
+          <img src="https://via.placeholder.com/300x200?text=Máscara1" class="w-full h-full object-cover carousel-image">
+          <img src="https://via.placeholder.com/300x200?text=Máscara2" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Máscara3" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Máscara4" class="w-full h-full object-cover carousel-image hidden">
+          <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 prev-btn">&lt;</button>
+          <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 next-btn">&gt;</button>
+        </div>
+        <h3 class="mt-3 text-lg font-semibold">Máscara Capilar</h3>
+        <p class="text-gray-600 mt-1">250ml — nutrição profunda</p>
+        <div class="mt-2 flex justify-between items-center">
+          <span class="font-bold text-pink-600" data-unitprice="49.90">R$ 49,90</span>
+        </div>
+        <div class="mt-2 flex items-center gap-2">
+          <label class="text-sm">Qtd:</label>
+          <input type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
+        </div>
+        <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price">R$ 49,90</span></div>
+        <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">Comprar</button>
+      </div>
+
+    </div>
+
+    <!-- Ver mais produtos -->
+    <div class="mt-4 text-center">
+      <a href="cabelos.html" class="inline-block bg-pink-600 text-white py-2 px-6 rounded hover:bg-pink-700 transition">Ver mais produtos</a>
+    </div>
+  </section>
+
+  <!-- Maquiagem -->
+  <section>
+    <h2 class="text-3xl font-bold text-gray-800 mb-6">Maquiagem</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Card Batom -->
+      <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+        <div class="relative w-full h-48 overflow-hidden rounded">
+          <img src="https://via.placeholder.com/300x200?text=Batom1" class="w-full h-full object-cover carousel-image">
+          <img src="https://via.placeholder.com/300x200?text=Batom2" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Batom3" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Batom4" class="w-full h-full object-cover carousel-image hidden">
+          <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 prev-btn">&lt;</button>
+          <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 next-btn">&gt;</button>
+        </div>
+        <h3 class="mt-3 text-lg font-semibold">Batom Líquido</h3>
+        <p class="text-gray-600 mt-1">Fórmula duradoura — cores vibrantes</p>
+        <div class="mt-2 flex justify-between items-center">
+          <span class="font-bold text-pink-600" data-unitprice="39.90">R$ 39,90</span>
+        </div>
+        <div class="mt-2 flex items-center gap-2">
+          <label class="text-sm">Qtd:</label>
+          <input type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
+        </div>
+        <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price">R$ 39,90</span></div>
+        <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">Comprar</button>
+      </div>
+
+      <!-- Card Sombras -->
+      <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+        <div class="relative w-full h-48 overflow-hidden rounded">
+          <img src="https://via.placeholder.com/300x200?text=Sombras1" class="w-full h-full object-cover carousel-image">
+          <img src="https://via.placeholder.com/300x200?text=Sombras2" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Sombras3" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Sombras4" class="w-full h-full object-cover carousel-image hidden">
+          <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 prev-btn">&lt;</button>
+          <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 next-btn">&gt;</button>
+        </div>
+        <h3 class="mt-3 text-lg font-semibold">Paleta de Sombras</h3>
+        <p class="text-gray-600 mt-1">12 cores — matte e shimmer</p>
+        <div class="mt-2 flex justify-between items-center">
+          <span class="font-bold text-pink-600" data-unitprice="79.90">R$ 79,90</span>
+        </div>
+        <div class="mt-2 flex items-center gap-2">
+          <label class="text-sm">Qtd:</label>
+          <input type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
+        </div>
+        <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price">R$ 79,90</span></div>
+        <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">Comprar</button>
+      </div>
+
+      <!-- Card Base -->
+      <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+        <div class="relative w-full h-48 overflow-hidden rounded">
+          <img src="https://via.placeholder.com/300x200?text=Base1" class="w-full h-full object-cover carousel-image">
+          <img src="https://via.placeholder.com/300x200?text=Base2" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Base3" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Base4" class="w-full h-full object-cover carousel-image hidden">
+          <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 prev-btn">&lt;</button>
+          <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 next-btn">&gt;</button>
+        </div>
+        <h3 class="mt-3 text-lg font-semibold">Base Líquida</h3>
+        <p class="text-gray-600 mt-1">Cobertura média — efeito natural</p>
         <div class="mt-2 flex justify-between items-center">
           <span class="font-bold text-pink-600" data-unitprice="59.90">R$ 59,90</span>
         </div>
@@ -160,8 +266,175 @@
         <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price">R$ 59,90</span></div>
         <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">Comprar</button>
       </div>
+
     </div>
-  </main>
+    <div class="mt-4 text-center">
+      <a href="maquiagem.html" class="inline-block bg-pink-600 text-white py-2 px-6 rounded hover:bg-pink-700 transition">Ver mais produtos</a>
+    </div>
+  </section>
+
+      <!-- Perfumes -->
+  <section>
+    <h2 class="text-3xl font-bold text-gray-800 mb-6">Perfumes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Card Perfume Feminino -->
+      <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+        <div class="relative w-full h-48 overflow-hidden rounded">
+          <img src="https://via.placeholder.com/300x200?text=Feminino1" class="w-full h-full object-cover carousel-image">
+          <img src="https://via.placeholder.com/300x200?text=Feminino2" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Feminino3" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Feminino4" class="w-full h-full object-cover carousel-image hidden">
+          <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 prev-btn">&lt;</button>
+          <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 next-btn">&gt;</button>
+        </div>
+        <h3 class="mt-3 text-lg font-semibold">Perfume Feminino</h3>
+        <p class="text-gray-600 mt-1">50ml — fragrância floral</p>
+        <div class="mt-2 flex justify-between items-center">
+          <span class="font-bold text-pink-600" data-unitprice="149.90">R$ 149,90</span>
+        </div>
+        <div class="mt-2 flex items-center gap-2">
+          <label class="text-sm">Qtd:</label>
+          <input type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
+        </div>
+        <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price">R$ 149,90</span></div>
+        <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">Comprar</button>
+      </div>
+
+      <!-- Card Perfume Masculino -->
+      <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+        <div class="relative w-full h-48 overflow-hidden rounded">
+          <img src="https://via.placeholder.com/300x200?text=Masculino1" class="w-full h-full object-cover carousel-image">
+          <img src="https://via.placeholder.com/300x200?text=Masculino2" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Masculino3" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Masculino4" class="w-full h-full object-cover carousel-image hidden">
+          <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 prev-btn">&lt;</button>
+          <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 next-btn">&gt;</button>
+        </div>
+        <h3 class="mt-3 text-lg font-semibold">Perfume Masculino</h3>
+        <p class="text-gray-600 mt-1">100ml — fragrância amadeirada</p>
+        <div class="mt-2 flex justify-between items-center">
+          <span class="font-bold text-pink-600" data-unitprice="159.90">R$ 159,90</span>
+        </div>
+        <div class="mt-2 flex items-center gap-2">
+          <label class="text-sm">Qtd:</label>
+          <input type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
+        </div>
+        <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price">R$ 159,90</span></div>
+        <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">Comprar</button>
+      </div>
+
+      <!-- Card Perfume Importado -->
+      <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+        <div class="relative w-full h-48 overflow-hidden rounded">
+          <img src="https://via.placeholder.com/300x200?text=Importado1" class="w-full h-full object-cover carousel-image">
+          <img src="https://via.placeholder.com/300x200?text=Importado2" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Importado3" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Importado4" class="w-full h-full object-cover carousel-image hidden">
+          <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 prev-btn">&lt;</button>
+          <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 next-btn">&gt;</button>
+        </div>
+        <h3 class="mt-3 text-lg font-semibold">Perfume Importado</h3>
+        <p class="text-gray-600 mt-1">75ml — edição limitada</p>
+        <div class="mt-2 flex justify-between items-center">
+          <span class="font-bold text-pink-600" data-unitprice="199.90">R$ 199,90</span>
+        </div>
+        <div class="mt-2 flex items-center gap-2">
+          <label class="text-sm">Qtd:</label>
+          <input type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
+        </div>
+        <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price">R$ 199,90</span></div>
+        <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">Comprar</button>
+      </div>
+
+    </div>
+    <div class="mt-4 text-center">
+      <a href="perfumes.html" class="inline-block bg-pink-600 text-white py-2 px-6 rounded hover:bg-pink-700 transition">Ver mais produtos</a>
+    </div>
+  </section>
+
+  <!-- Skincare -->
+  <section>
+    <h2 class="text-3xl font-bold text-gray-800 mb-6">Skincare</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Card Hidratante -->
+      <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+        <div class="relative w-full h-48 overflow-hidden rounded">
+          <img src="https://via.placeholder.com/300x200?text=Hidratante1" class="w-full h-full object-cover carousel-image">
+          <img src="https://via.placeholder.com/300x200?text=Hidratante2" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Hidratante3" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Hidratante4" class="w-full h-full object-cover carousel-image hidden">
+          <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 prev-btn">&lt;</button>
+          <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 next-btn">&gt;</button>
+        </div>
+        <h3 class="mt-3 text-lg font-semibold">Hidratante Facial</h3>
+        <p class="text-gray-600 mt-1">50ml — pele macia e luminosa</p>
+        <div class="mt-2 flex justify-between items-center">
+          <span class="font-bold text-pink-600" data-unitprice="79.90">R$ 79,90</span>
+        </div>
+        <div class="mt-2 flex items-center gap-2">
+          <label class="text-sm">Qtd:</label>
+          <input type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
+        </div>
+        <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price">R$ 79,90</span></div>
+        <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">Comprar</button>
+      </div>
+
+      <!-- Card Sérum -->
+      <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+        <div class="relative w-full h-48 overflow-hidden rounded">
+          <img src="https://via.placeholder.com/300x200?text=Serum1" class="w-full h-full object-cover carousel-image">
+          <img src="https://via.placeholder.com/300x200?text=Serum2" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Serum3" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Serum4" class="w-full h-full object-cover carousel-image hidden">
+          <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 prev-btn">&lt;</button>
+          <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 next-btn">&gt;</button>
+        </div>
+        <h3 class="mt-3 text-lg font-semibold">Sérum Anti-idade</h3>
+        <p class="text-gray-600 mt-1">30ml — redução de linhas finas</p>
+        <div class="mt-2 flex justify-between items-center">
+          <span class="font-bold text-pink-600" data-unitprice="129.90">R$ 129,90</span>
+        </div>
+        <div class="mt-2 flex items-center gap-2">
+          <label class="text-sm">Qtd:</label>
+          <input type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
+        </div>
+        <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price">R$ 129,90</span></div>
+        <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">Comprar</button>
+      </div>
+
+      <!-- Card Protetor Solar -->
+      <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+        <div class="relative w-full h-48 overflow-hidden rounded">
+          <img src="https://via.placeholder.com/300x200?text=Protetor1" class="w-full h-full object-cover carousel-image">
+          <img src="https://via.placeholder.com/300x200?text=Protetor2" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Protetor3" class="w-full h-full object-cover carousel-image hidden">
+          <img src="https://via.placeholder.com/300x200?text=Protetor4" class="w-full h-full object-cover carousel-image hidden">
+          <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 prev-btn">&lt;</button>
+          <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 next-btn">&gt;</button>
+        </div>
+        <h3 class="mt-3 text-lg font-semibold">Protetor Solar FPS 50</h3>
+        <p class="text-gray-600 mt-1">50ml — alta proteção</p>
+        <div class="mt-2 flex justify-between items-center">
+          <span class="font-bold text-pink-600" data-unitprice="89.90">R$ 89,90</span>
+        </div>
+        <div class="mt-2 flex items-center gap-2">
+          <label class="text-sm">Qtd:</label>
+          <input type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
+        </div>
+        <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price">R$ 89,90</span></div>
+        <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">Comprar</button>
+      </div>
+
+    </div>
+    <div class="mt-4 text-center">
+      <a href="skincare.html" class="inline-block bg-pink-600 text-white py-2 px-6 rounded hover:bg-pink-700 transition">Ver mais produtos</a>
+    </div>
+  </section>
+
+</main>
+
 
   <script>
     const openMenu = document.getElementById("openMenu");
@@ -211,3 +484,4 @@
 
 </body>
 </html>
+
