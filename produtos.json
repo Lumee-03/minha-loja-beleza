@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "title": "Sérum Iluminador",
+    "desc": "Frasco 30ml — hidratação e brilho imediato.",
+    "price": 59.90,
+    "image": "https://via.placeholder.com/420x280?text=Serum"
+  },
+  {
+    "id": "2",
+    "title": "Creme Hidratante Corporal",
+    "desc": "Pele macia e perfumada por até 24h.",
+    "price": 79.90,
+    "image": "https://via.placeholder.com/420x280?text=Creme"
+  },
+  {
+    "id": "3",
+    "title": "Shampoo Revitalizante",
+    "desc": "Limpeza suave e nutrição para os fios.",
+    "price": 39.90,
+    "image": "https://via.placeholder.com/420x280?text=Shampoo"
+  }
+]
