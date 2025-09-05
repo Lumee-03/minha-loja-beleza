@@ -1,53 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minha Loja de Beleza</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lume Beleza — Loja</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 font-inter">
-  <header class="bg-white shadow p-4 flex justify-between items-center">
-    <h1 class="text-2xl font-bold text-pink-500">Lume — Beleza</h1>
-    <nav class="space-x-4">
-      <a href="index.html" class="hover:text-pink-500">Início</a>
-      <a href="produtos.html" class="hover:text-pink-500">Produtos</a>
-      <a href="contato.html" class="hover:text-pink-500">Contato</a>
-    </nav>
+<body class="bg-pink-50 font-sans text-gray-800">
+  <header class="bg-white shadow p-4 sticky top-0 z-10">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-pink-600">Lume — Beleza</h1>
+      <nav class="space-x-6">
+        <a href="index.html" class="hover:text-pink-600">Início</a>
+        <a href="produtos.html" class="hover:text-pink-600">Produtos</a>
+        <a href="contato.html" class="hover:text-pink-600">Contato</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="container mx-auto py-10 px-4">
-    <section class="mb-10">
-      <img src="https://via.placeholder.com/1200x400?text=Banner+Lume+Beleza" alt="Banner" class="rounded-lg w-full">
+  <main class="container mx-auto p-6">
+    <section class="mb-10 text-center">
+      <h2 class="text-3xl font-bold mb-4">Destaques</h2>
+      <p class="text-gray-600">Escolhidos especialmente para você ✨</p>
     </section>
 
-    <section>
-      <h2 class="text-3xl font-bold mb-6">Produtos em destaque</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        <a href="produto.html?id=serum-iluminador" class="block bg-white rounded-xl shadow p-4 hover:shadow-lg transition">
-          <img src="https://via.placeholder.com/420x280?text=Sérum+Iluminador" alt="Sérum Iluminador" class="rounded-lg mb-4">
-          <h3 class="text-xl font-semibold mb-2">Sérum Iluminador</h3>
-          <p class="text-pink-500 font-bold">R$ 59,90</p>
-        </a>
-
-        <a href="produto.html?id=creme-hidratante" class="block bg-white rounded-xl shadow p-4 hover:shadow-lg transition">
-          <img src="https://via.placeholder.com/420x280?text=Creme+Hidratante" alt="Creme Hidratante" class="rounded-lg mb-4">
-          <h3 class="text-xl font-semibold mb-2">Creme Hidratante</h3>
-          <p class="text-pink-500 font-bold">R$ 79,90</p>
-        </a>
-
-        <!-- Adicione mais produtos aqui -->
-      </div>
-    </section>
+    <section id="product-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></section>
   </main>
 
-  <footer class="bg-white shadow mt-10 p-6 text-center">
-    <p>&copy; 2025 Lume Beleza. Todos os direitos reservados.</p>
-    <div class="mt-2 space-x-4">
-      <a href="#" class="text-pink-500 hover:underline">Instagram</a>
-      <a href="#" class="text-pink-500 hover:underline">Facebook</a>
-    </div>
+  <footer class="bg-white shadow p-6 mt-12 text-center text-sm text-gray-500">
+    © 2025 Lume Beleza — Todos os direitos reservados.
   </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
