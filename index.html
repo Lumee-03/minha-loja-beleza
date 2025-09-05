@@ -1,158 +1,132 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lume — Loja de Beleza</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lume - Loja de Beleza</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="font-sans bg-gray-50">
 
   <!-- Header -->
-  <header class="bg-white shadow p-4 fixed top-0 left-0 right-0 z-50">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-pink-500">Lume — Beleza</h1>
-      <nav class="space-x-6">
-        <a href="index.html" class="text-gray-700 hover:text-pink-500">Início</a>
-        <a href="cabelos.html" class="text-gray-700 hover:text-pink-500">Cabelos</a>
-        <a href="maquiagens.html" class="text-gray-700 hover:text-pink-500">Maquiagens</a>
-        <a href="perfumaria.html" class="text-gray-700 hover:text-pink-500">Perfumaria</a>
+  <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-pink-600">Lume</h1>
+
+      <nav class="hidden md:flex gap-6 text-gray-700 font-medium">
+        <a href="index.html" class="hover:text-pink-600">Home</a>
+        <button id="openMenu" class="hover:text-pink-600">Ver tudo</button>
+        <a href="cabelos.html" class="hover:text-pink-600">Cabelos</a>
+        <a href="maquiagem.html" class="hover:text-pink-600">Maquiagem</a>
+        <a href="perfumes.html" class="hover:text-pink-600">Perfumes</a>
+        <a href="skincare.html" class="hover:text-pink-600">Skincare</a>
       </nav>
+
+      <!-- Botão mobile -->
+      <button id="openMenuMobile" class="md:hidden text-gray-700 focus:outline-none">
+        ☰
+      </button>
     </div>
   </header>
 
-  <!-- Espaço para o header fixo -->
-  <div class="h-20"></div>
+  <!-- Espaço para não cobrir conteúdo -->
+  <div class="h-16"></div>
 
-  <!-- Hero / Banner -->
-  <section class="text-center py-12 bg-pink-100">
-    <h2 class="text-3xl font-bold text-gray-800">Beleza que inspira confiança ✨</h2>
-    <p class="text-gray-600 mt-2">Escolha seus produtos favoritos de cabelo, maquiagem e perfumaria.</p>
-  </section>
-
-  <!-- Seção de Destaques -->
-  <main class="max-w-6xl mx-auto px-4 py-10">
-    <h3 class="text-2xl font-semibold mb-6 text-gray-800">Produtos em Destaque</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-
-      <!-- Card Produto -->
-      <div class="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
-        <img src="https://via.placeholder.com/400x250?text=Sérum+Iluminador" 
-             alt="Sérum Iluminador" 
-             class="rounded-lg mb-4">
-        <h4 class="text-lg font-semibold">Sérum Iluminador</h4>
-        <p class="text-sm text-gray-600">Hidratação e brilho para sua pele.</p>
-        <p class="text-pink-600 font-bold mt-2">R$ <span class="unitPrice">59,90</span></p>
-
-        <div class="flex items-center space-x-2 mt-2">
-          <label for="qtd1" class="text-sm">Qtd:</label>
-          <input id="qtd1" type="number" value="1" min="1" 
-                 class="w-16 border rounded px-2 py-1 text-center quantidade">
-        </div>
-
-        <p class="text-gray-800 text-sm mt-2">Total: <span class="total font-semibold">R$ 59,90</span></p>
-
-        <button class="buyBtn mt-3 w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600">
-          Comprar
-        </button>
-      </div>
-
-      <!-- Outro Produto -->
-      <div class="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
-        <img src="https://via.placeholder.com/400x250?text=Shampoo+Nutritivo" 
-             alt="Shampoo Nutritivo" 
-             class="rounded-lg mb-4">
-        <h4 class="text-lg font-semibold">Shampoo Nutritivo</h4>
-        <p class="text-sm text-gray-600">Limpeza suave e hidratação profunda.</p>
-        <p class="text-pink-600 font-bold mt-2">R$ <span class="unitPrice">39,90</span></p>
-
-        <div class="flex items-center space-x-2 mt-2">
-          <label for="qtd2" class="text-sm">Qtd:</label>
-          <input id="qtd2" type="number" value="1" min="1" 
-                 class="w-16 border rounded px-2 py-1 text-center quantidade">
-        </div>
-
-        <p class="text-gray-800 text-sm mt-2">Total: <span class="total font-semibold">R$ 39,90</span></p>
-
-        <button class="buyBtn mt-3 w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600">
-          Comprar
-        </button>
-      </div>
-
-      <!-- Outro Produto -->
-      <div class="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
-        <img src="https://via.placeholder.com/400x250?text=Perfume+Floral" 
-             alt="Perfume Floral" 
-             class="rounded-lg mb-4">
-        <h4 class="text-lg font-semibold">Perfume Floral</h4>
-        <p class="text-sm text-gray-600">Notas frescas e delicadas.</p>
-        <p class="text-pink-600 font-bold mt-2">R$ <span class="unitPrice">89,90</span></p>
-
-        <div class="flex items-center space-x-2 mt-2">
-          <label for="qtd3" class="text-sm">Qtd:</label>
-          <input id="qtd3" type="number" value="1" min="1" 
-                 class="w-16 border rounded px-2 py-1 text-center quantidade">
-        </div>
-
-        <p class="text-gray-800 text-sm mt-2">Total: <span class="total font-semibold">R$ 89,90</span></p>
-
-        <button class="buyBtn mt-3 w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600">
-          Comprar
-        </button>
-      </div>
-
+  <!-- Aba lateral -->
+  <div id="sideMenu" class="fixed top-0 left-0 w-72 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-50">
+    <div class="p-4 flex justify-between items-center border-b">
+      <h2 class="text-xl font-semibold text-gray-800">Categorias</h2>
+      <button id="closeMenu" class="text-gray-500 hover:text-gray-800">✕</button>
     </div>
+
+    <nav class="p-4 space-y-4 text-gray-700">
+      <!-- Cabelos -->
+      <div>
+        <button class="w-full flex justify-between items-center font-medium hover:text-pink-600 submenu-btn">
+          Cabelos <span>+</span>
+        </button>
+        <div class="submenu hidden ml-4 mt-2 space-y-2 text-sm">
+          <a href="#" class="block hover:text-pink-600">Shampoo</a>
+          <a href="#" class="block hover:text-pink-600">Condicionador</a>
+          <a href="#" class="block hover:text-pink-600">Tratamentos</a>
+          <a href="#" class="block hover:text-pink-600">Finalizadores</a>
+        </div>
+      </div>
+
+      <!-- Maquiagem -->
+      <div>
+        <button class="w-full flex justify-between items-center font-medium hover:text-pink-600 submenu-btn">
+          Maquiagem <span>+</span>
+        </button>
+        <div class="submenu hidden ml-4 mt-2 space-y-2 text-sm">
+          <a href="#" class="block hover:text-pink-600">Base</a>
+          <a href="#" class="block hover:text-pink-600">Batom</a>
+          <a href="#" class="block hover:text-pink-600">Sombras</a>
+          <a href="#" class="block hover:text-pink-600">Pó</a>
+        </div>
+      </div>
+
+      <!-- Perfumes -->
+      <div>
+        <button class="w-full flex justify-between items-center font-medium hover:text-pink-600 submenu-btn">
+          Perfumes <span>+</span>
+        </button>
+        <div class="submenu hidden ml-4 mt-2 space-y-2 text-sm">
+          <a href="#" class="block hover:text-pink-600">Femininos</a>
+          <a href="#" class="block hover:text-pink-600">Masculinos</a>
+          <a href="#" class="block hover:text-pink-600">Importados</a>
+          <a href="#" class="block hover:text-pink-600">Nacionais</a>
+        </div>
+      </div>
+
+      <!-- Skincare -->
+      <div>
+        <button class="w-full flex justify-between items-center font-medium hover:text-pink-600 submenu-btn">
+          Skincare <span>+</span>
+        </button>
+        <div class="submenu hidden ml-4 mt-2 space-y-2 text-sm">
+          <a href="#" class="block hover:text-pink-600">Hidratantes</a>
+          <a href="#" class="block hover:text-pink-600">Séruns</a>
+          <a href="#" class="block hover:text-pink-600">Protetores Solares</a>
+          <a href="#" class="block hover:text-pink-600">Limpeza Facial</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Conteúdo da página -->
+  <main class="max-w-7xl mx-auto px-4 py-10">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6">Bem-vinda à Lume</h2>
+    <p class="text-gray-600">Aqui você encontra os melhores produtos de beleza para cabelos, maquiagem, perfumes e skincare.</p>
   </main>
 
-  <!-- Rodapé -->
-  <footer class="bg-gray-800 text-white text-center p-6 mt-10">
-    <p>&copy; 2025 Lume Beleza — Todos os direitos reservados.</p>
-  </footer>
-
-  <!-- Script -->
   <script>
-    // Formatar moeda BRL
-    const fmtBRL = n => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(n);
+    const openMenu = document.getElementById("openMenu");
+    const openMenuMobile = document.getElementById("openMenuMobile");
+    const closeMenu = document.getElementById("closeMenu");
+    const sideMenu = document.getElementById("sideMenu");
+    const submenuBtns = document.querySelectorAll(".submenu-btn");
 
-    document.querySelectorAll('.buyBtn').forEach((btn, index) => {
-      const card = btn.closest('div');
-      const unitPriceEl = card.querySelector('.unitPrice');
-      const totalEl = card.querySelector('.total');
-      const qtdInput = card.querySelector('.quantidade');
+    // Abrir menu
+    openMenu.addEventListener("click", () => {
+      sideMenu.classList.remove("-translate-x-full");
+    });
+    openMenuMobile.addEventListener("click", () => {
+      sideMenu.classList.remove("-translate-x-full");
+    });
 
-      const unitPrice = parseFloat(unitPriceEl.textContent.replace(',', '.'));
+    // Fechar menu
+    closeMenu.addEventListener("click", () => {
+      sideMenu.classList.add("-translate-x-full");
+    });
 
-      // Atualizar total ao mudar quantidade
-      qtdInput.addEventListener('input', () => {
-        let q = parseInt(qtdInput.value, 10);
-        if (!q || q < 1) { q = 1; qtdInput.value = 1; }
-        const total = (unitPrice * q).toFixed(2);
-        totalEl.textContent = fmtBRL(total);
-      });
-
-      // Botão comprar
-      btn.addEventListener('click', async () => {
-        const q = parseInt(qtdInput.value, 10) || 1;
-        const title = card.querySelector('h4').textContent;
-
-        try {
-          const response = await fetch("https://minha-loja-beleza.onrender.com/create_preference", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ title, quantity: q, unitPrice })
-          });
-
-          const data = await response.json();
-          if (data.init_point) {
-            window.open(data.init_point, "_blank"); // abre em nova guia
-          } else {
-            alert("Erro ao criar preferência de pagamento");
-            console.log(data);
-          }
-        } catch (err) {
-          console.error(err);
-          alert("Erro de conexão com o servidor");
-        }
+    // Submenus expansíveis
+    submenuBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const submenu = btn.nextElementSibling;
+        submenu.classList.toggle("hidden");
+        btn.querySelector("span").textContent =
+          submenu.classList.contains("hidden") ? "+" : "−";
       });
     });
   </script>
