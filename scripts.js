@@ -26,9 +26,29 @@ quantityInput.addEventListener('input', updateTotal);
 // Inicializa
 updateTotal();
 
-// Botão comprar (apenas alerta por enquanto)
-buyBtn.addEventListener('click', () => {
-  const q = parseInt(quantityInput.value, 10) || 1;
-  const total = +(unitPrice * q).toFixed(2);
-  alert(`Pedido: ${q} × — Total: ${fmtBRL(total)}\nNo próximo passo vamos gerar o link de pagamento Mercado Pago.`);
+// Botão comprar (agora chama o backend Render)
+buyBtn.addEventListener('click', async () => {
+  const quantity = parseInt(quantityInput.value, 10) || 1;
+  const title = document.querySelector('.product-title').textContent;
+
+  try {
+    const response = await fetch('https://minha-loja-beleza.onrender.com/create_preference', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title, quantity, unitPrice })
+    });
+
+    const data = await response.json();
+
+    if (data.init_point) {
+      // Redireciona para checkout Mercado Pago
+      window.location.href = data.init_point;
+    } else {
+      alert('Erro ao criar preferência de pagamento');
+      console.log(data);
+    }
+  } catch (err) {
+    console.error(err);
+    alert('Erro de conexão com o servidor');
+  }
 });
