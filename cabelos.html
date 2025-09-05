@@ -14,7 +14,7 @@
     <p class="text-gray-600 mt-2">Loja de Beleza Profissional</p>
   </header>
 
-  <!-- Header / Menu abaixo do título -->
+  <!-- Header / Menu -->
   <div class="bg-white shadow-md">
     <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
       <nav class="flex gap-6 text-gray-700 font-medium">
@@ -25,21 +25,16 @@
         <a href="perfumes.html" class="hover:text-pink-600">Perfumes</a>
         <a href="skincare.html" class="hover:text-pink-600">Skincare</a>
       </nav>
-
-      <!-- Botão mobile -->
-      <button id="openMenuMobile" class="md:hidden text-gray-700 focus:outline-none">
-        ☰
-      </button>
+      <button id="openMenuMobile" class="md:hidden text-gray-700 focus:outline-none">☰</button>
     </div>
   </div>
 
-  <!-- Aba lateral -->
+  <!-- Menu lateral -->
   <div id="sideMenu" class="fixed top-0 left-0 w-72 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-50">
     <div class="p-4 flex justify-between items-center border-b">
       <h2 class="text-xl font-semibold text-gray-800">Categorias</h2>
       <button id="closeMenu" class="text-gray-500 hover:text-gray-800">✕</button>
     </div>
-
     <nav class="p-4 space-y-4 text-gray-700">
       <div>
         <button class="w-full flex justify-between items-center font-medium hover:text-pink-600 submenu-btn">
@@ -88,110 +83,15 @@
     </nav>
   </div>
 
-  <!-- Conteúdo da página: Seção Cabelos -->
+  <!-- Seção Cabelos -->
   <main class="max-w-7xl mx-auto px-4 py-10">
     <section>
       <h2 class="text-3xl font-bold text-gray-800 mb-6">Cabelos</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-        <!-- Card Shampoo -->
-        <div class="bg-white p-4 rounded-lg shadow">
-          <div class="relative w-full h-48 overflow-hidden rounded">
-            <img src="https://via.placeholder.com/300x200?text=Shampoo1" class="w-full h-full object-cover carousel-image">
-            <img src="https://via.placeholder.com/300x200?text=Shampoo2" class="w-full h-full object-cover carousel-image hidden">
-            <img src="https://via.placeholder.com/300x200?text=Shampoo3" class="w-full h-full object-cover carousel-image hidden">
-            <img src="https://via.placeholder.com/300x200?text=Shampoo4" class="w-full h-full object-cover carousel-image hidden">
-            <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 prev-btn">&lt;</button>
-            <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 next-btn">&gt;</button>
-          </div>
-          <h3 class="mt-3 text-lg font-semibold">Shampoo Hidratante</h3>
-          <p class="text-gray-600 mt-1">200ml — hidratação intensa</p>
-          <div class="mt-2 flex justify-between items-center">
-            <span class="font-bold text-pink-600" data-unitprice="29.90">R$ 29,90</span>
-          </div>
-          <div class="mt-2 flex items-center gap-2">
-            <label class="text-sm">Qtd:</label>
-            <input type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
-          </div>
-          <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price">R$ 29,90</span></div>
-          <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">Comprar</button>
-        </div>
-
-        <!-- Card Condicionador -->
-        <div class="bg-white p-4 rounded-lg shadow">
-          <div class="relative w-full h-48 overflow-hidden rounded">
-            <img src="https://via.placeholder.com/300x200?text=Condicionador1" class="w-full h-full object-cover carousel-image">
-            <img src="https://via.placeholder.com/300x200?text=Condicionador2" class="w-full h-full object-cover carousel-image hidden">
-            <img src="https://via.placeholder.com/300x200?text=Condicionador3" class="w-full h-full object-cover carousel-image hidden">
-            <img src="https://via.placeholder.com/300x200?text=Condicionador4" class="w-full h-full object-cover carousel-image hidden">
-            <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 prev-btn">&lt;</button>
-            <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 next-btn">&gt;</button>
-          </div>
-          <h3 class="mt-3 text-lg font-semibold">Condicionador Nutritivo</h3>
-          <p class="text-gray-600 mt-1">200ml — maciez e brilho</p>
-          <div class="mt-2 flex justify-between items-center">
-            <span class="font-bold text-pink-600" data-unitprice="34.90">R$ 34,90</span>
-          </div>
-          <div class="mt-2 flex items-center gap-2">
-            <label class="text-sm">Qtd:</label>
-            <input type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
-          </div>
-          <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price">R$ 34,90</span></div>
-          <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">Comprar</button>
-        </div>
-
-        <!-- Card Máscara -->
-        <div class="bg-white p-4 rounded-lg shadow">
-          <div class="relative w-full h-48 overflow-hidden rounded">
-            <img src="https://via.placeholder.com/300x200?text=Mascara1" class="w-full h-full object-cover carousel-image">
-            <img src="https://via.placeholder.com/300x200?text=Mascara2" class="w-full h-full object-cover carousel-image hidden">
-            <img src="https://via.placeholder.com/300x200?text=Mascara3" class="w-full h-full object-cover carousel-image hidden">
-            <img src="https://via.placeholder.com/300x200?text=Mascara4" class="w-full h-full object-cover carousel-image hidden">
-            <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 prev-btn">&lt;</button>
-            <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 next-btn">&gt;</button>
-          </div>
-          <h3 class="mt-3 text-lg font-semibold">Máscara Reparadora</h3>
-          <p class="text-gray-600 mt-1">300g — restauração intensa</p>
-          <div class="mt-2 flex justify-between items-center">
-            <span class="font-bold text-pink-600" data-unitprice="49.90">R$ 49,90</span>
-          </div>
-          <div class="mt-2 flex items-center gap-2">
-            <label class="text-sm">Qtd:</label>
-            <input type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
-          </div>
-          <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price">R$ 49,90</span></div>
-          <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">Comprar</button>
-        </div>
-
-        <!-- Card Finalizador -->
-        <div class="bg-white p-4 rounded-lg shadow">
-          <div class="relative w-full h-48 overflow-hidden rounded">
-            <img src="https://via.placeholder.com/300x200?text=Finalizador1" class="w-full h-full object-cover carousel-image">
-            <img src="https://via.placeholder.com/300x200?text=Finalizador2" class="w-full h-full object-cover carousel-image hidden">
-            <img src="https://via.placeholder.com/300x200?text=Finalizador3" class="w-full h-full object-cover carousel-image hidden">
-            <img src="https://via.placeholder.com/300x200?text=Finalizador4" class="w-full h-full object-cover carousel-image hidden">
-            <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 prev-btn">&lt;</button>
-            <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 next-btn">&gt;</button>
-          </div>
-          <h3 class="mt-3 text-lg font-semibold">Finalizador Capilar</h3>
-          <p class="text-gray-600 mt-1">150ml — brilho e controle</p>
-          <div class="mt-2 flex justify-between items-center">
-            <span class="font-bold text-pink-600" data-unitprice="39.90">R$ 39,90</span>
-          </div>
-          <div class="mt-2 flex items-center gap-2">
-            <label class="text-sm">Qtd:</label>
-            <input type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
-          </div>
-          <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price">R$ 39,90</span></div>
-          <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">Comprar</button>
-        </div>
-
-      </div>
-
+      <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
       <div class="mt-4 text-center">
-        <a href="#" class="inline-block bg-pink-600 text-white py-2 px-6 rounded hover:bg-pink-700 transition">
+        <button id="loadMore" class="bg-pink-600 text-white py-2 px-6 rounded hover:bg-pink-700 transition">
           Ver mais produtos
-        </a>
+        </button>
       </div>
     </section>
   </main>
@@ -216,48 +116,96 @@
       });
     });
 
-    // Quantidade e total
-    const quantityInputs = document.querySelectorAll(".quantity-input");
-    const buyButtons = document.querySelectorAll(".buy-btn");
-
-    quantityInputs.forEach((input, index) => {
-      const totalEl = input.parentElement.parentElement.querySelector(".total-price");
-      const unitPrice = parseFloat(input.parentElement.parentElement.querySelector("[data-unitprice]").dataset.unitprice);
-      input.addEventListener("input", () => {
-        let q = parseInt(input.value, 10);
-        if (!q || q < 1) { q = 1; input.value = 1; }
-        totalEl.textContent = `R$ ${(unitPrice * q).toFixed(2)}`;
+    // Dados fictícios (100 produtos)
+    const products = [];
+    for(let i=1;i<=100;i++){
+      products.push({
+        name:`Produto Capilar ${i}`,
+        desc:`${200+i}ml — descrição do produto ${i}`,
+        price:(29.90 + (i%10)*2).toFixed(2),
+        images:[
+          `https://via.placeholder.com/300x200?text=Produto${i}_1`,
+          `https://via.placeholder.com/300x200?text=Produto${i}_2`,
+          `https://via.placeholder.com/300x200?text=Produto${i}_3`,
+          `https://via.placeholder.com/300x200?text=Produto${i}_4`
+        ]
       });
-    });
+    }
 
-    buyButtons.forEach((btn, index) => {
-      btn.addEventListener("click", () => {
-        const input = btn.parentElement.querySelector(".quantity-input");
-        const q = parseInt(input.value, 10) || 1;
-        const total = (parseFloat(btn.parentElement.querySelector("[data-unitprice]").dataset.unitprice) * q).toFixed(2);
-        alert(`Produto: ${btn.parentElement.querySelector("h3").textContent}\nQtd: ${q}\nTotal: R$ ${total}`);
-      });
-    });
+    const productGrid = document.getElementById('productGrid');
+    const loadMoreBtn = document.getElementById('loadMore');
+    let displayed = 0;
+    const perPage = 20;
 
-    // Carrossel
-    const allCards = document.querySelectorAll(".relative");
-    allCards.forEach(card => {
-      const images = card.querySelectorAll(".carousel-image");
-      let index = 0;
-      const prevBtn = card.querySelector(".prev-btn");
-      const nextBtn = card.querySelector(".next-btn");
+    function createCard(product){
+      const div = document.createElement('div');
+      div.className="bg-white p-4 rounded-lg shadow";
+      div.innerHTML = `
+        <div class="relative w-full h-48 overflow-hidden rounded">
+          ${product.images.map((img,i)=>`<img src="${img}" class="w-full h-full object-cover carousel-image ${i>0?'hidden':''}">`).join('')}
+          <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 prev-btn">&lt;</button>
+          <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 rounded-full px-2 py-1 next-btn">&gt;</button>
+        </div>
+        <h3 class="mt-3 text-lg font-semibold">${product.name}</h3>
+        <p class="text-gray-600 mt-1">${product.desc}</p>
+        <div class="mt-2 flex justify-between items-center">
+          <span class="font-bold text-pink-600" data-unitprice="${product.price}">R$ ${product.price}</span>
+        </div>
+        <div class="mt-2 flex items-center gap-2">
+          <label class="text-sm">Qtd:</label>
+          <input type="number" min="1" value="1" class="w-16 border rounded px-1 py-0.5 text-center quantity-input">
+        </div>
+        <div class="mt-2 font-semibold text-gray-800">Total: <span class="total-price">R$ ${product.price}</span></div>
+        <button class="buy-btn mt-3 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700">Comprar</button>
+      `;
+      productGrid.appendChild(div);
 
-      prevBtn.addEventListener("click", () => {
-        images[index].classList.add("hidden");
-        index = (index - 1 + images.length) % images.length;
-        images[index].classList.remove("hidden");
+      // Carrossel
+      const images = div.querySelectorAll(".carousel-image");
+      let idx=0;
+      const prevBtn = div.querySelector(".prev-btn");
+      const nextBtn = div.querySelector(".next-btn");
+      prevBtn.addEventListener("click", ()=>{
+        images[idx].classList.add("hidden");
+        idx=(idx-1+images.length)%images.length;
+        images[idx].classList.remove("hidden");
       });
-      nextBtn.addEventListener("click", () => {
-        images[index].classList.add("hidden");
-        index = (index + 1) % images.length;
-        images[index].classList.remove("hidden");
+      nextBtn.addEventListener("click", ()=>{
+        images[idx].classList.add("hidden");
+        idx=(idx+1)%images.length;
+        images[idx].classList.remove("hidden");
       });
-    });
+
+      // Quantidade e total
+      const input = div.querySelector(".quantity-input");
+      const totalEl = div.querySelector(".total-price");
+      const unitPrice = parseFloat(product.price);
+      input.addEventListener("input",()=>{
+        let q=parseInt(input.value,10);
+        if(!q||q<1){q=1;input.value=1;}
+        totalEl.textContent=`R$ ${(unitPrice*q).toFixed(2)}`;
+      });
+
+      // Comprar
+      const buyBtn = div.querySelector(".buy-btn");
+      buyBtn.addEventListener("click",()=>{
+        const q=parseInt(input.value,10)||1;
+        const total=(unitPrice*q).toFixed(2);
+        alert(`Produto: ${product.name}\nQtd: ${q}\nTotal: R$ ${total}`);
+      });
+    }
+
+    function loadProducts(){
+      const nextItems = products.slice(displayed, displayed+perPage);
+      nextItems.forEach(prod=>createCard(prod));
+      displayed+=nextItems.length;
+      if(displayed>=products.length) loadMoreBtn.style.display='none';
+    }
+
+    loadMoreBtn.addEventListener("click", loadProducts);
+
+    // Carrega os primeiros 20
+    loadProducts();
   </script>
 
 </body>
