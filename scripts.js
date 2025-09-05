@@ -26,29 +26,33 @@ quantityInput.addEventListener('input', updateTotal);
 // Inicializa
 updateTotal();
 
-// Botão comprar (agora chama o backend Render)
-buyBtn.addEventListener('click', async () => {
-  const quantity = parseInt(quantityInput.value, 10) || 1;
-  const title = document.querySelector('.product-title').textContent;
+// Botão comprar
+buyBtn.addEventListener('click', () => {
+  const q = parseInt(quantityInput.value, 10) || 1;
+  const total = +(unitPrice * q).toFixed(2);
 
-  try {
-    const response = await fetch('https://minha-loja-beleza.onrender.com/create_preference', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title, quantity, unitPrice })
+  // Chama o backend no Render
+  fetch("https://minha-loja-beleza.onrender.com/create_preference", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      title: "Sérum Iluminador",
+      quantity: q,
+      unitPrice: unitPrice
+    })
+  })
+    .then(res => res.json())
+    .then(data => {
+      if (data.init_point) {
+        // Redireciona para o checkout do Mercado Pago
+        window.location.href = data.init_point;
+      } else {
+        alert("Erro ao gerar link de pagamento");
+        console.log(data);
+      }
+    })
+    .catch(err => {
+      alert("Erro de conexão com o servidor");
+      console.error(err);
     });
-
-    const data = await response.json();
-
-    if (data.init_point) {
-      // Redireciona para checkout Mercado Pago
-      window.location.href = data.init_point;
-    } else {
-      alert('Erro ao criar preferência de pagamento');
-      console.log(data);
-    }
-  } catch (err) {
-    console.error(err);
-    alert('Erro de conexão com o servidor');
-  }
 });
