@@ -38,14 +38,16 @@ app.post("/create_preference", async (req, res) => {
       }
     ],
     back_urls: {
-      success: "https://seusite.com/sucesso",
-      failure: "https://seusite.com/falha",
-      pending: "https://seusite.com/pending"
+      success: "https://lumee-03.github.io/minha-loja-beleza/",
+      failure: "https://lumee-03.github.io/minha-loja-beleza/",
+      pending: "https://lumee-03.github.io/minha-loja-beleza/"
     },
     auto_return: "approved"
   };
 
   try {
+    console.log("Criando preferência Mercado Pago:", preference);
+
     const response = await fetch("https://api.mercadopago.com/checkout/preferences", {
       method: "POST",
       headers: {
@@ -56,9 +58,11 @@ app.post("/create_preference", async (req, res) => {
     });
 
     const data = await response.json();
+    console.log("Resposta Mercado Pago:", data);
+
     res.json(data);
   } catch (err) {
-    console.error(err);
+    console.error("Erro ao criar preferência:", err);
     res.status(500).json({ error: "Erro ao criar preferência", detalhes: err.message });
   }
 });
